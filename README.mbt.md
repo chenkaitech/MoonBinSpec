@@ -149,6 +149,17 @@ decoder core itself has no file or platform dependency at all.
 
 ## Examples
 
+### Checking a schema
+
+`check` parses the schema without reading a binary file:
+
+```bash
+moon run cmd/main --target native -- check schemas/png.mbs
+```
+```
+Schema valid: 2 formats, root PNG
+```
+
 ### Sensor packet — little-endian, dependent-length field
 
 ```bash
@@ -213,8 +224,25 @@ A clean file just prints `VALID <path> matches <Format>`.
 
 ### Schema cookbook
 
-Four independent, self-contained schema files, one per grammar feature —
-each is exactly what a real test in `MoonBinSpec_test.mbt` decodes:
+These small schemas can be copied into separate `.mbs` files and combined
+with the CLI commands above. Each demonstrates a grammar feature used by the
+decoder tests.
+
+Fixed-size fields and dependent-length fields are the basic building blocks:
+
+```mbs
+format Packet endian little {
+  magic   : bytes[2]
+  kind    : ascii[4]
+  size    : u16
+  payload : bytes[size]
+}
+```
+
+The `size` field must appear before `payload`; the decoder uses its unsigned
+value to determine exactly how many bytes to consume.
+
+Nested structs and fixed-count arrays compose those building blocks:
 
 ```mbs
 // Nested struct: a field can name another format in the same document.
@@ -253,6 +281,20 @@ format Stream endian big {
 // Constant assertion: fail decoding if the bytes don't match.
 format Signature endian big {
   magic : bytes[4] expect hex("89504E47")
+}
+```
+
+An `expect` assertion is checked while decoding, so a file with the wrong
+magic value fails before later fields are interpreted. For variable-length
+streams, use `[*] until eof`:
+
+```mbs
+format Record endian little {
+  type  : u8
+  value : u32
+}
+format Log endian little {
+  records : Record[*] until eof
 }
 ```
 
