@@ -93,6 +93,14 @@ test "json renderer preserves field offsets" {
 }
 
 ///|
+test "JSON escaping preserves valid output for control characters" {
+  assert_eq(
+    json_escape("quote=\" slash=\\ back=\b form=\u000C unit=\u0001"),
+    "quote=\\\" slash=\\\\ back=\\b form=\\f unit=\\u0001",
+  )
+}
+
+///|
 test "document AST retains multiple format declarations" {
   let document = match
     parse_document(

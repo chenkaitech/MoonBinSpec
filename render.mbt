@@ -71,10 +71,24 @@ pub fn json_escape(text : String) -> String {
     match character {
       '"' => output.write_string("\\\"")
       '\\' => output.write_string("\\\\")
+      '\b' => output.write_string("\\b")
+      '\u000C' => output.write_string("\\f")
       '\n' => output.write_string("\\n")
       '\r' => output.write_string("\\r")
       '\t' => output.write_string("\\t")
-      _ => output.write_char(character)
+      _ => {
+        let code = character.to_int()
+        if code < 32 {
+          let hex = code.to_string(radix=16).to_upper()
+          output.write_string("\\u")
+          for _ in hex.length()..<4 {
+            output.write_char('0')
+          }
+          output.write_string(hex)
+        } else {
+          output.write_char(character)
+        }
+      }
     }
   }
   output.to_string()
