@@ -15,6 +15,9 @@ jobs:
       - run: moon test --target wasm-gc
       - run: moon build --target native cmd/main
       - run: moon build --target js webcore --release
+      - run: web/build-core.sh
+      - run: git diff --exit-code -- web/webcore.js
+      - run: node --check web/inspector.js
       - run: moon run cmd/main --target native -- check schemas/png.mbs
       - run: moon run cmd/main --target native -- validate fixtures/sample.png -s schemas/png.mbs
       - run: moon run cmd/main --target native -- validate fixtures/corrupt.png -s schemas/png.mbs
