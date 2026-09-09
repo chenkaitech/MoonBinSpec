@@ -235,7 +235,9 @@ function run() {
   const entries = [];
   flatten(result.root, result.root.name, 0, entries);
   state.entries = entries;
-  state.selected = entries.length ? 0 : null;
+  // entries[0] is the root itself (its range spans the whole input), so
+  // default to the first real field instead of highlighting every byte.
+  state.selected = entries.length > 1 ? 1 : entries.length ? 0 : null;
   $("#format-name").textContent = result.root.name;
   $("#schema-state").textContent = "valid";
   $("#schema-state").style.color = "";
