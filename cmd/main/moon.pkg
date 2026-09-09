@@ -1,0 +1,5 @@
+import {
+  "moonbinspec/moonbinspec" @spec,
+}
+
+pkgtype(kind: "executable")

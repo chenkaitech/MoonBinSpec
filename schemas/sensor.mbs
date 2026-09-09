@@ -1,0 +1,6 @@
+format SensorPacket endian little {
+  magic       : u16
+  version     : u8
+  payload_len : u16
+  payload     : bytes[payload_len]
+}

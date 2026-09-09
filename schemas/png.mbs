@@ -1,0 +1,5 @@
+format PngHeader endian big {
+  signature : bytes[8]
+  length    : u32
+  kind      : ascii[4]
+}
