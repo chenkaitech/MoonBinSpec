@@ -1,5 +1,7 @@
 # MoonBinSpec
 
+**English** | [中文](README.zh-CN.md)
+
 **A declarative binary format parser, validator, and inspector for MoonBit.**
 
 Parsing binary files and network protocols usually means writing the same
@@ -66,10 +68,10 @@ nested structs. Supported field types:
 (not a separate indented line) — this keeps the parser a single-pass,
 line-based scanner instead of needing cross-line lookahead.
 
-Deliberately out of scope for V1 (see `prd.md` for the fuller rationale):
-a general expression language, bitfields, conditional fields, unions, enum
-codegen, a serializer, and streaming. Kaitai-full compatibility is a
-non-goal.
+Deliberately out of scope for V1: a general expression language, bitfields,
+conditional fields, unions, enum codegen, a serializer, and streaming —
+each adds real complexity for a use case this schema language doesn't need
+yet. Kaitai-full compatibility is a non-goal.
 
 ## The value tree
 
@@ -195,11 +197,11 @@ fixtures/            real + deliberately corrupted sample binaries
 ```
 
 The core library (`MoonBinSpec.mbt`, `decoder.mbt`, `render.mbt`) lives in
-one package rather than the `schema/`, `decoder/`, `model/`, `render/`
-sub-packages sketched in early design notes (`prd.md`) — at this size,
-splitting into more packages under one module would add import wiring
-without a functional benefit; the file split already separates the three
-concerns (grammar, decoding, rendering) for anyone reading the code.
+one package rather than separate `schema/`, `decoder/`, `model/`, `render/`
+sub-packages — at this size, splitting into more packages under one module
+would add import wiring without a functional benefit; the file split
+already separates the three concerns (grammar, decoding, rendering) for
+anyone reading the code.
 
 ## Status
 
@@ -207,12 +209,13 @@ Implemented: the full V1 schema grammar (signed/unsigned 8–64-bit integers,
 both endiannesses, fixed and dependent-length bytes/ascii, nested structs,
 fixed-count and until-eof arrays, `expect` constants), the decoder engine
 producing a source-mapped value tree, terminal and JSON renderers, a Native
-CLI with real file I/O and all four PRD commands, a browser Inspector
-running the real compiled-to-JS core, and PNG/WAV/sensor-packet schemas
-with real (and corrupted) fixtures exercised by the test suite.
+CLI with real file I/O and four commands (`check`/`inspect`/`decode`/
+`validate`), a browser Inspector running the real compiled-to-JS core, and
+PNG/WAV/sensor-packet schemas with real (and corrupted) fixtures exercised
+by the test suite.
 
 Known gaps: the CLI does not set a non-zero process exit code on a failed
 `validate`/`decode` (it prints the structural error and exits 0 — MoonBit's
 native runtime doesn't expose a process-exit API through `moonbitlang/core`
 today); the `.mbs` grammar has no bitfields, conditional fields, unions, or
-MoonBit codegen (all deliberately deferred, see `prd.md`).
+MoonBit codegen (all deliberately deferred to a future version).
