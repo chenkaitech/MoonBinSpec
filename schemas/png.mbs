@@ -1,5 +1,17 @@
-format PngHeader endian big {
-  signature : bytes[8]
-  length    : u32
-  kind      : ascii[4]
+// PNG (Portable Network Graphics), ISO/IEC 15948.
+//
+// Demonstrates: big-endian primitives, a dependent-length byte field,
+// a nested struct, a repeated ("until eof") array of that struct, and a
+// constant assertion on the 8-byte file signature.
+
+format PngChunk endian big {
+  length : u32
+  kind   : ascii[4]
+  data   : bytes[length]
+  crc    : u32
+}
+
+format PNG endian big {
+  signature : bytes[8] expect hex("89504E470D0A1A0A")
+  chunks    : PngChunk[*] until eof
 }

@@ -1,0 +1,18 @@
+// WAV (RIFF/WAVE), a minimal single-fmt-plus-data reading.
+//
+// Demonstrates: little-endian primitives (the opposite of png.mbs) and a
+// different chunk shape, to show the same core handles more than one
+// real-world binary format.
+
+format WavChunk endian little {
+  id   : ascii[4]
+  size : u32
+  data : bytes[size]
+}
+
+format WAV endian little {
+  riff       : ascii[4] expect hex("52494646")
+  file_size  : u32
+  wave       : ascii[4] expect hex("57415645")
+  chunks     : WavChunk[*] until eof
+}

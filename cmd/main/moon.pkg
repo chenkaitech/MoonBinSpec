@@ -1,5 +1,7 @@
 import {
   "moonbinspec/moonbinspec" @spec,
+  "moonbitlang/core/env",
+  "moonbitlang/x/fs",
 }
 
 pkgtype(kind: "executable")

@@ -1,0 +1,9 @@
+import {
+  "moonbinspec/moonbinspec" @spec,
+}
+
+pkgtype(kind: "executable")
+
+options(
+  link: { "js": { "exports": [ "decode_to_json" ], "format": "esm" } },
+)

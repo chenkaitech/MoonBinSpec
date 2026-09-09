@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoonBinSpec Inspector</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">MB</span> MoonBinSpec <small>INSPECTOR</small></div>
+      <div class="status"><span></span> MoonBit core, compiled to JS</div>
+    </header>
+    <main>
+      <section class="control-strip" aria-label="Inspector controls">
+        <input id="file-input" type="file" aria-label="Open binary file" />
+        <button id="open-file" type="button" class="file-control">Open binary</button>
+        <button id="sensor-demo" type="button">Sensor packet</button>
+        <button id="png-demo" type="button">PNG</button>
+        <button id="corrupt-demo" type="button">Corrupted PNG</button>
+        <button id="wav-demo" type="button">WAV</button>
+        <button id="decode" type="button" class="primary">Decode</button>
+        <div id="file-name" class="file-name">demo.sensor</div>
+      </section>
+      <section class="workspace">
+        <aside class="schema-panel">
+          <div class="panel-title">Schema <span id="schema-state">valid</span></div>
+          <textarea id="schema" spellcheck="false">format SensorPacket endian little {
+  magic       : u16
+  version     : u8
+  payload_len : u16
+  payload     : bytes[payload_len]
+}</textarea>
+          <div class="hint">u8/u16/u32/u64, i8/i16/i32/i64, bytes[n], ascii[n], nested Format, Format[n], Format[*] until eof, expect hex("...")</div>
+        </aside>
+        <section class="tree-panel">
+          <div class="panel-title">Structure <span id="format-name"></span></div>
+          <div id="tree" class="tree" role="tree"></div>
+        </section>
+        <section class="hex-panel">
+          <div class="panel-title">Bytes <span id="byte-count"></span></div>
+          <div class="hex-head"><span>OFFSET</span><span>HEX</span><span>ASCII</span></div>
+          <div id="hex" class="hex" aria-label="Hexadecimal bytes"></div>
+        </section>
+        <aside class="detail-panel">
+          <div class="panel-title">Field</div>
+          <div id="detail" class="detail empty">Select a field or byte range.</div>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="./inspector.js"></script>
+  </body>
+</html>

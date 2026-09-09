@@ -6,11 +6,21 @@ import {
 }
 
 // Values
-pub fn decode(Schema, Bytes) -> Result[Array[Node], DecodeError]
+pub fn decode(Document, Bytes) -> Result[Node, DecodeError]
+
+pub fn decode_format(Document, Schema, Bytes) -> Result[Node, DecodeError]
+
+pub fn json_escape(String) -> String
+
+pub fn parse_document(String) -> Result[Document, String]
 
 pub fn parse_schema(String) -> Result[Schema, String]
 
-pub fn render_tree(Schema, Array[Node]) -> String
+pub fn render_json(Node) -> String
+
+pub fn render_tree(Node) -> String
+
+pub fn to_hex(Bytes, Int, Int) -> String
 
 // Errors
 
@@ -23,24 +33,35 @@ pub struct DecodeError {
   reason : String
 } derive(Eq, @debug.Debug)
 
+pub struct Document {
+  formats : Array[Schema]
+} derive(Eq, @debug.Debug)
+pub fn Document::root(Self) -> Schema
+
+pub enum ElementType {
+  Prim(ScalarType)
+  StructRef(String)
+} derive(Eq, @debug.Debug)
+
 pub enum Endian {
   Little
   Big
 } derive(Eq, @debug.Debug)
 
+pub enum Expectation {
+  ExpectHex(String)
+} derive(Eq, @debug.Debug)
+
 pub struct Field {
   name : String
   kind : FieldType
+  expect : Expectation?
 } derive(Eq, @debug.Debug)
 
 pub enum FieldType {
-  U8
-  U16
-  U32
-  Bytes(Int)
-  Ascii(Int)
-  BytesFrom(String)
-  AsciiFrom(String)
+  Scalar(ScalarType)
+  Struct(String)
+  Array(ElementType, Repeat)
 } derive(Eq, @debug.Debug)
 
 pub struct Node {
@@ -50,6 +71,27 @@ pub struct Node {
   length : Int
 } derive(Eq, @debug.Debug)
 
+pub enum Repeat {
+  Fixed(Int)
+  FixedRef(String)
+  UntilEof
+} derive(Eq, @debug.Debug)
+
+pub enum ScalarType {
+  I8
+  U8
+  I16
+  U16
+  I32
+  U32
+  I64
+  U64
+  Bytes(Int)
+  Ascii(Int)
+  BytesFrom(String)
+  AsciiFrom(String)
+} derive(Eq, @debug.Debug)
+
 pub struct Schema {
   name : String
   endian : Endian
@@ -57,8 +99,12 @@ pub struct Schema {
 } derive(Eq, @debug.Debug)
 
 pub enum Value {
-  Unsigned(UInt64)
-  Hex(String)
+  UInt(UInt64)
+  Int(Int64)
+  Text(String)
+  Bytes(Bytes)
+  Array(Array[Node])
+  Object(Array[Node])
 } derive(Eq, @debug.Debug)
 
 // Type aliases

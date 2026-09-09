@@ -1,12 +1,12 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "moonbinspec/moonbinspec/cmd/main"
+package "moonbinspec/moonbinspec/webcore"
 
 // Values
+pub fn decode_to_json(String, Bytes) -> String
 
 // Errors
 
 // Types and methods
-type Options
 
 // Type aliases
 
