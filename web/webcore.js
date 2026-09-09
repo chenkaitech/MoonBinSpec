@@ -231,34 +231,34 @@ const _M0MPB4Iter4nextN6constrS9855GcE = 0;
 const _M0MPB4Iter4nextN6constrS9856GcE = 0;
 const _M0MPB4Iter3newN6constrS9863GRPC16string10StringViewE = 0;
 const _M0MPB4Iter3newN6constrS9863GcE = 0;
-const _M0FP211moonbinspec11moonbinspec14strip__commentN7_2abindS943 = "//";
-const _M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1002 = "]";
-const _M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1003 = "[";
-const _M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1037 = " expect ";
-const _M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1036 = " until eof";
-const _M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1043 = "hex(\"";
-const _M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1044 = "\")";
-const _M0FP211moonbinspec11moonbinspec12parse__fieldN7_2abindS1085 = ":";
-const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1197 = "\n";
-const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1099 = "format ";
-const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1114 = " ";
-const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1100 = "endian";
-const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1101 = "{";
-const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1142 = ":";
-const _M0FP211moonbinspec11moonbinspec13parse__endianN6constrS1221 = 0;
-const _M0FP211moonbinspec11moonbinspec13parse__endianN6constrS1222 = 1;
+const _M0FP211moonbinspec11moonbinspec14strip__commentN7_2abindS952 = "//";
+const _M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1011 = "]";
+const _M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1012 = "[";
+const _M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1046 = " expect ";
+const _M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1045 = " until eof";
+const _M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1052 = "hex(\"";
+const _M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1053 = "\")";
+const _M0FP211moonbinspec11moonbinspec12parse__fieldN7_2abindS1094 = ":";
+const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1206 = "\n";
+const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1108 = "format ";
+const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1123 = " ";
+const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1109 = "endian";
+const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1110 = "{";
+const _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1151 = ":";
+const _M0FP211moonbinspec11moonbinspec13parse__endianN6constrS1230 = 0;
+const _M0FP211moonbinspec11moonbinspec13parse__endianN6constrS1231 = 1;
 const _M0MPC16string10StringView4findN6constrS9865 = 0;
-const _M0FP211moonbinspec11moonbinspec15split__modifierN6constrS1223 = "until eof";
-const _M0FP211moonbinspec11moonbinspec12parse__fieldN6constrS1224 = "until eof";
-const _M0FP211moonbinspec11moonbinspec12parse__fieldN6constrS1225 = "until eof";
-const _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1226 = new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec8DocumentsE3Err("a format block must be closed before another begins");
-const _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1227 = new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec8DocumentsE3Err("endian must be big or little");
-const _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1228 = new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec8DocumentsE3Err("unexpected closing brace");
-const _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1229 = new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec8DocumentsE3Err("schema document must declare at least one format");
-const _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1217 = new _M0DTPC16result6ResultGisE2Ok(8);
-const _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1218 = new _M0DTPC16result6ResultGisE2Ok(4);
-const _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1219 = new _M0DTPC16result6ResultGisE2Ok(2);
-const _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1220 = new _M0DTPC16result6ResultGisE2Ok(1);
+const _M0FP211moonbinspec11moonbinspec15split__modifierN6constrS1232 = "until eof";
+const _M0FP211moonbinspec11moonbinspec12parse__fieldN6constrS1233 = "until eof";
+const _M0FP211moonbinspec11moonbinspec12parse__fieldN6constrS1234 = "until eof";
+const _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1235 = new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec8DocumentsE3Err("a format block must be closed before another begins");
+const _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1236 = new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec8DocumentsE3Err("endian must be big or little");
+const _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1237 = new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec8DocumentsE3Err("unexpected closing brace");
+const _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1238 = new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec8DocumentsE3Err("schema document must declare at least one format");
+const _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1226 = new _M0DTPC16result6ResultGisE2Ok(8);
+const _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1227 = new _M0DTPC16result6ResultGisE2Ok(4);
+const _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1228 = new _M0DTPC16result6ResultGisE2Ok(2);
+const _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1229 = new _M0DTPC16result6ResultGisE2Ok(1);
 function _M0MPC15array10FixedArray12unsafe__blitGRPB17UnsafeMaybeUninitGyEE(dst, dst_offset, src, src_offset, len) {
   if (dst === src && dst_offset < src_offset) {
     let _tmp = 0;
@@ -1491,6 +1491,14 @@ function _M0FP211moonbinspec11moonbinspec12json__escape(text) {
           _M0IPB13StringBuilderPB6Logger13write__string(output, "\\\\");
           break;
         }
+        case 8: {
+          _M0IPB13StringBuilderPB6Logger13write__string(output, "\\b");
+          break;
+        }
+        case 12: {
+          _M0IPB13StringBuilderPB6Logger13write__string(output, "\\f");
+          break;
+        }
         case 10: {
           _M0IPB13StringBuilderPB6Logger13write__string(output, "\\n");
           break;
@@ -1504,7 +1512,26 @@ function _M0FP211moonbinspec11moonbinspec12json__escape(text) {
           break;
         }
         default: {
-          _M0IPB13StringBuilderPB6Logger11write__char(output, _decoded_char);
+          const code = _decoded_char;
+          if (code < 32) {
+            const hex = _M0MPC16string6String9to__upper(_M0MPC13int3Int18to__string_2einner(code, 16));
+            _M0IPB13StringBuilderPB6Logger13write__string(output, "\\u");
+            const _bind$2 = hex.length;
+            let _tmp$2 = _bind$2;
+            while (true) {
+              const _ = _tmp$2;
+              if (_ < 4) {
+                _M0IPB13StringBuilderPB6Logger11write__char(output, 48);
+                _tmp$2 = _ + 1 | 0;
+                continue;
+              } else {
+                break;
+              }
+            }
+            _M0IPB13StringBuilderPB6Logger13write__string(output, hex);
+          } else {
+            _M0IPB13StringBuilderPB6Logger11write__char(output, _decoded_char);
+          }
         }
       }
       _tmp = _decoded_next_string_index;
@@ -1796,13 +1823,13 @@ function _M0FP211moonbinspec11moonbinspec12scalar__size(scalar, siblings) {
                 }
               }
             }
-            return _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1220;
+            return _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1229;
           }
-          return _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1219;
+          return _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1228;
         }
-        return _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1218;
+        return _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1227;
       }
-      return _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1217;
+      return _M0FP211moonbinspec11moonbinspec12scalar__sizeN6constrS1226;
     }
     return new _M0DTPC16result6ResultGisE2Ok(size);
   }
@@ -2181,7 +2208,7 @@ function _M0FP211moonbinspec11moonbinspec4trim(value) {
   return _M0MPC16string10StringView9to__owned(_M0MPC16string10StringView4trim(value, undefined));
 }
 function _M0FP211moonbinspec11moonbinspec14strip__comment(line) {
-  const _bind = _M0MPC16string6String4find(line, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec14strip__commentN7_2abindS943, 0, _M0FP211moonbinspec11moonbinspec14strip__commentN7_2abindS943.length));
+  const _bind = _M0MPC16string6String4find(line, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec14strip__commentN7_2abindS952, 0, _M0FP211moonbinspec11moonbinspec14strip__commentN7_2abindS952.length));
   if (_bind === undefined) {
     return line;
   } else {
@@ -2353,10 +2380,10 @@ function _M0FP211moonbinspec11moonbinspec15is__hex__digits(value) {
 function _M0FP211moonbinspec11moonbinspec13parse__endian(value) {
   switch (value) {
     case "little": {
-      return _M0FP211moonbinspec11moonbinspec13parse__endianN6constrS1221;
+      return _M0FP211moonbinspec11moonbinspec13parse__endianN6constrS1230;
     }
     case "big": {
-      return _M0FP211moonbinspec11moonbinspec13parse__endianN6constrS1222;
+      return _M0FP211moonbinspec11moonbinspec13parse__endianN6constrS1231;
     }
     default: {
       return undefined;
@@ -2441,10 +2468,10 @@ function _M0FP211moonbinspec11moonbinspec19parse__scalar__head(head) {
   }
 }
 function _M0FP211moonbinspec11moonbinspec15split__brackets(raw) {
-  if (!_M0MPC16string6String11has__suffix(raw, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1002, 0, _M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1002.length))) {
+  if (!_M0MPC16string6String11has__suffix(raw, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1011, 0, _M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1011.length))) {
     return undefined;
   }
-  const _bind = _M0MPC16string6String4find(raw, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1003, 0, _M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1003.length));
+  const _bind = _M0MPC16string6String4find(raw, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1012, 0, _M0FP211moonbinspec11moonbinspec15split__bracketsN7_2abindS1012.length));
   if (_bind === undefined) {
     return undefined;
   } else {
@@ -2512,9 +2539,9 @@ function _M0FP211moonbinspec11moonbinspec18parse__field__type(raw) {
 }
 function _M0FP211moonbinspec11moonbinspec15split__modifier(raw) {
   const source = _M0FP211moonbinspec11moonbinspec4trim(new _M0TPC16string10StringView(raw, 0, raw.length));
-  const _bind = _M0MPC16string6String4find(source, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1037, 0, _M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1037.length));
+  const _bind = _M0MPC16string6String4find(source, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1046, 0, _M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1046.length));
   if (_bind === undefined) {
-    return _M0MPC16string6String11has__suffix(source, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1036, 0, _M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1036.length)) ? { _0: _M0FP211moonbinspec11moonbinspec4trim(_M0MPC16string6String11sub_2einner(source, 0, source.length - 10 | 0)), _1: _M0FP211moonbinspec11moonbinspec15split__modifierN6constrS1223 } : { _0: source, _1: undefined };
+    return _M0MPC16string6String11has__suffix(source, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1045, 0, _M0FP211moonbinspec11moonbinspec15split__modifierN7_2abindS1045.length)) ? { _0: _M0FP211moonbinspec11moonbinspec4trim(_M0MPC16string6String11sub_2einner(source, 0, source.length - 10 | 0)), _1: _M0FP211moonbinspec11moonbinspec15split__modifierN6constrS1232 } : { _0: source, _1: undefined };
   } else {
     const _Some = _bind;
     const _index = _Some;
@@ -2523,7 +2550,7 @@ function _M0FP211moonbinspec11moonbinspec15split__modifier(raw) {
 }
 function _M0FP211moonbinspec11moonbinspec18parse__expect__hex(raw) {
   const source = _M0FP211moonbinspec11moonbinspec4trim(new _M0TPC16string10StringView(raw, 0, raw.length));
-  if (_M0MPC16string6String11has__prefix(source, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1043, 0, _M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1043.length)) && _M0MPC16string6String11has__suffix(source, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1044, 0, _M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1044.length))) {
+  if (_M0MPC16string6String11has__prefix(source, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1052, 0, _M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1052.length)) && _M0MPC16string6String11has__suffix(source, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1053, 0, _M0FP211moonbinspec11moonbinspec18parse__expect__hexN7_2abindS1053.length))) {
     const inner = _M0MPC16string10StringView9to__owned(_M0MPC16string6String11sub_2einner(source, 5, source.length - 2 | 0));
     return _M0FP211moonbinspec11moonbinspec15is__hex__digits(inner) ? _M0MPC16string6String9to__upper(inner) : undefined;
   } else {
@@ -2531,7 +2558,7 @@ function _M0FP211moonbinspec11moonbinspec18parse__expect__hex(raw) {
   }
 }
 function _M0FP211moonbinspec11moonbinspec12parse__field(line) {
-  const pair = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string6String5split(line, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec12parse__fieldN7_2abindS1085, 0, _M0FP211moonbinspec11moonbinspec12parse__fieldN7_2abindS1085.length)));
+  const pair = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string6String5split(line, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec12parse__fieldN7_2abindS1094, 0, _M0FP211moonbinspec11moonbinspec12parse__fieldN7_2abindS1094.length)));
   if (pair.length !== 2) {
     const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(27);
     _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "invalid field declaration: ");
@@ -2571,13 +2598,13 @@ function _M0FP211moonbinspec11moonbinspec12parse__field(line) {
   } else {
     is_until_eof = false;
   }
-  if (is_until_eof && _M0IP016_24default__implPB2Eq10not__equalGOsE(_modifier, _M0FP211moonbinspec11moonbinspec12parse__fieldN6constrS1224)) {
+  if (is_until_eof && _M0IP016_24default__implPB2Eq10not__equalGOsE(_modifier, _M0FP211moonbinspec11moonbinspec12parse__fieldN6constrS1233)) {
     const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(53);
     _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "array declared with '[*]' must end with 'until eof': ");
     _M0MPB13StringBuilder13write__objectGsE(_string_builder, line);
     return new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec5FieldsE3Err(_string_builder.val);
   }
-  if (!is_until_eof && _M0IPC16option6OptionPB2Eq5equalGsE(_modifier, _M0FP211moonbinspec11moonbinspec12parse__fieldN6constrS1225)) {
+  if (!is_until_eof && _M0IPC16option6OptionPB2Eq5equalGsE(_modifier, _M0FP211moonbinspec11moonbinspec12parse__fieldN6constrS1234)) {
     const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(58);
     _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "'until eof' may only follow an array declared with '[*]': ");
     _M0MPB13StringBuilder13write__objectGsE(_string_builder, line);
@@ -2720,7 +2747,7 @@ function _M0FP211moonbinspec11moonbinspec19validate__reference(fields, field_nam
   }
 }
 function _M0FP211moonbinspec11moonbinspec15parse__document(source) {
-  const lines = _M0MPC16string6String5split(source, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1197, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1197.length));
+  const lines = _M0MPC16string6String5split(source, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1206, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1206.length));
   const formats = [];
   let in_format = false;
   let name = "";
@@ -2737,12 +2764,12 @@ function _M0FP211moonbinspec11moonbinspec15parse__document(source) {
       if (line === "") {
         continue;
       } else {
-        if (_M0MPC16string6String11has__prefix(line, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1099, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1099.length))) {
+        if (_M0MPC16string6String11has__prefix(line, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1108, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1108.length))) {
           if (in_format) {
-            return _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1226;
+            return _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1235;
           }
-          const words = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string6String5split(line, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1114, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1114.length)));
-          if (words.length !== 5 || (_M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(words, 2), new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1100, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1100.length)) || _M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(words, 4), new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1101, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1101.length)))) {
+          const words = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string6String5split(line, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1123, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1123.length)));
+          if (words.length !== 5 || (_M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(words, 2), new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1109, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1109.length)) || _M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(_M0MPC15array5Array2atGRPC16string10StringViewE(words, 4), new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1110, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1110.length)))) {
             const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(28);
             _M0IPB13StringBuilderPB6Logger13write__string(_string_builder, "invalid format declaration: ");
             _M0MPB13StringBuilder13write__objectGsE(_string_builder, line);
@@ -2775,7 +2802,7 @@ function _M0FP211moonbinspec11moonbinspec15parse__document(source) {
           }
           const _bind$3 = _M0FP211moonbinspec11moonbinspec13parse__endian(_M0MPC16string10StringView9to__owned(_M0MPC15array5Array2atGRPC16string10StringViewE(words, 3)));
           if (_bind$3 === undefined) {
-            return _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1227;
+            return _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1236;
           } else {
             const _Some$2 = _bind$3;
             const _value = _Some$2;
@@ -2787,7 +2814,7 @@ function _M0FP211moonbinspec11moonbinspec15parse__document(source) {
         } else {
           if (line === "}") {
             if (!in_format) {
-              return _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1228;
+              return _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1237;
             }
             if (fields.length === 0) {
               const _string_builder = _M0MPB13StringBuilder21StringBuilder_2einner(39);
@@ -2864,7 +2891,7 @@ function _M0FP211moonbinspec11moonbinspec15parse__document(source) {
               _M0MPB13StringBuilder13write__objectGsE(_string_builder, line);
               return new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec8DocumentsE3Err(_string_builder.val);
             } else {
-              if (_M0MPC16string6String8contains(line, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1142, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1142.length))) {
+              if (_M0MPC16string6String8contains(line, new _M0TPC16string10StringView(_M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1151, 0, _M0FP211moonbinspec11moonbinspec15parse__documentN7_2abindS1151.length))) {
                 const _bind$2 = _M0FP211moonbinspec11moonbinspec12parse__field(line);
                 let field;
                 if (_bind$2.$tag === 1) {
@@ -2916,7 +2943,7 @@ function _M0FP211moonbinspec11moonbinspec15parse__document(source) {
     return new _M0DTPC16result6ResultGRP211moonbinspec11moonbinspec8DocumentsE3Err(_string_builder.val);
   }
   if (formats.length === 0) {
-    return _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1229;
+    return _M0FP211moonbinspec11moonbinspec15parse__documentN6constrS1238;
   }
   const _bind = formats.length;
   let _tmp = 0;

@@ -252,6 +252,24 @@ function loadDemo(name) {
   run();
 }
 
+function detectSchema(bytes) {
+  if (
+    bytes.length >= 8 &&
+    bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e && bytes[3] === 0x47 &&
+    bytes[4] === 0x0d && bytes[5] === 0x0a && bytes[6] === 0x1a && bytes[7] === 0x0a
+  ) {
+    return demos.png.schema;
+  }
+  if (
+    bytes.length >= 12 &&
+    bytes[0] === 0x52 && bytes[1] === 0x49 && bytes[2] === 0x46 && bytes[3] === 0x46 &&
+    bytes[8] === 0x57 && bytes[9] === 0x41 && bytes[10] === 0x56 && bytes[11] === 0x45
+  ) {
+    return demos.wav.schema;
+  }
+  return null;
+}
+
 $("#decode").onclick = run;
 $("#sensor-demo").onclick = () => loadDemo("sensor");
 $("#png-demo").onclick = () => loadDemo("png");
@@ -272,6 +290,8 @@ $("#file-input").onchange = (event) => {
   const reader = new FileReader();
   reader.onload = () => {
     state.bytes = new Uint8Array(reader.result);
+    const detectedSchema = detectSchema(state.bytes);
+    if (detectedSchema !== null) $("#schema").value = detectedSchema;
     $("#file-name").textContent = file.name;
     run();
   };
