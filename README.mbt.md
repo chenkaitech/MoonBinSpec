@@ -147,6 +147,115 @@ reason:     field length exceeds remaining input
 The CLI is native-only (it needs real file I/O via `moonbitlang/x/fs`); the
 decoder core itself has no file or platform dependency at all.
 
+## Examples
+
+### Sensor packet — little-endian, dependent-length field
+
+```bash
+moon run cmd/main --target native -- inspect fixtures/sample.sensor -s schemas/sensor.mbs
+```
+```
+SensorPacket
+|- magic: 43605  [offset 0x0, length 2]
+|- version: 1  [offset 0x2, length 1]
+|- payload_len: 3  [offset 0x3, length 2]
+|- payload: 0x102030  [offset 0x5, length 3]
+```
+
+`decode --json` gives the same tree machine-readably, with every field's
+byte range preserved:
+
+```bash
+moon run cmd/main --target native -- decode fixtures/sample.sensor -s schemas/sensor.mbs --json
+```
+```json
+{"name":"SensorPacket","offset":0,"length":8,"value":{"magic":{"name":"magic","offset":0,"length":2,"value":43605},"version":{"name":"version","offset":2,"length":1,"value":1},"payload_len":{"name":"payload_len","offset":3,"length":2,"value":3},"payload":{"name":"payload","offset":5,"length":3,"value":"0x102030"}}}
+```
+
+### WAV — a different endianness and chunk shape than PNG
+
+```bash
+moon run cmd/main --target native -- inspect fixtures/sample.wav -s schemas/wav.mbs
+```
+```
+WAV
+|- riff: "RIFF"  [offset 0x0, length 4]
+|- file_size: 40  [offset 0x4, length 4]
+|- wave: "WAVE"  [offset 0x8, length 4]
+|- chunks  [offset 0xc, length 36]
+   |- [0]  [offset 0xc, length 24]
+      |- id: "fmt "  [offset 0xc, length 4]
+      |- size: 16  [offset 0x10, length 4]
+      |- data: 0x0100010044AC000044AC000001000800  [offset 0x14, length 16]
+   |- [1]  [offset 0x24, length 12]
+      |- id: "data"  [offset 0x24, length 4]
+      |- size: 4  [offset 0x28, length 4]
+      |- data: 0x80808080  [offset 0x2c, length 4]
+```
+
+### Validating a corrupted file
+
+```bash
+moon run cmd/main --target native -- validate fixtures/corrupt.wav -s schemas/wav.mbs
+```
+```
+STRUCTURAL ERROR
+
+WAV.chunks[1].data
+
+offset:     0x2c
+expected:   10004 bytes
+remaining:  4 bytes
+reason:     field length exceeds remaining input
+```
+
+A clean file just prints `VALID <path> matches <Format>`.
+
+### Schema cookbook
+
+Four independent, self-contained schema files, one per grammar feature —
+each is exactly what a real test in `MoonBinSpec_test.mbt` decodes:
+
+```mbs
+// Nested struct: a field can name another format in the same document.
+format Point endian big {
+  x : u8
+  y : u8
+}
+format Line endian big {
+  start : Point
+  stop  : Point
+}
+```
+
+```mbs
+// Fixed-count array sized by an earlier field.
+format Sample endian big {
+  value : u8
+}
+format Container endian big {
+  count  : u8
+  values : Sample[count]
+}
+```
+
+```mbs
+// Read-to-end array: keep decoding elements until the input runs out.
+format Chunk endian big {
+  tag : u8
+}
+format Stream endian big {
+  chunks : Chunk[*] until eof
+}
+```
+
+```mbs
+// Constant assertion: fail decoding if the bytes don't match.
+format Signature endian big {
+  magic : bytes[4] expect hex("89504E47")
+}
+```
+
 ## Browser Inspector
 
 The Inspector runs the *exact same* MoonBit decoder core in the browser —

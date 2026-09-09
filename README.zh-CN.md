@@ -145,6 +145,116 @@ reason:     field length exceeds remaining input
 CLI 只能在 Native 后端运行（因为它需要通过 `moonbitlang/x/fs` 做真
 实的文件 I/O）；解码核心本身则完全没有文件或平台相关的依赖。
 
+## 使用例子
+
+### Sensor packet —— 小端序、依赖长度的字段
+
+```bash
+moon run cmd/main --target native -- inspect fixtures/sample.sensor -s schemas/sensor.mbs
+```
+```
+SensorPacket
+|- magic: 43605  [offset 0x0, length 2]
+|- version: 1  [offset 0x2, length 1]
+|- payload_len: 3  [offset 0x3, length 2]
+|- payload: 0x102030  [offset 0x5, length 3]
+```
+
+`decode --json` 会输出同一棵树的机器可读版本，同样保留每个字段的
+字节范围：
+
+```bash
+moon run cmd/main --target native -- decode fixtures/sample.sensor -s schemas/sensor.mbs --json
+```
+```json
+{"name":"SensorPacket","offset":0,"length":8,"value":{"magic":{"name":"magic","offset":0,"length":2,"value":43605},"version":{"name":"version","offset":2,"length":1,"value":1},"payload_len":{"name":"payload_len","offset":3,"length":2,"value":3},"payload":{"name":"payload","offset":5,"length":3,"value":"0x102030"}}}
+```
+
+### WAV —— 和 PNG 不同的大小端与 chunk 结构
+
+```bash
+moon run cmd/main --target native -- inspect fixtures/sample.wav -s schemas/wav.mbs
+```
+```
+WAV
+|- riff: "RIFF"  [offset 0x0, length 4]
+|- file_size: 40  [offset 0x4, length 4]
+|- wave: "WAVE"  [offset 0x8, length 4]
+|- chunks  [offset 0xc, length 36]
+   |- [0]  [offset 0xc, length 24]
+      |- id: "fmt "  [offset 0xc, length 4]
+      |- size: 16  [offset 0x10, length 4]
+      |- data: 0x0100010044AC000044AC000001000800  [offset 0x14, length 16]
+   |- [1]  [offset 0x24, length 12]
+      |- id: "data"  [offset 0x24, length 4]
+      |- size: 4  [offset 0x28, length 4]
+      |- data: 0x80808080  [offset 0x2c, length 4]
+```
+
+### 校验一个损坏的文件
+
+```bash
+moon run cmd/main --target native -- validate fixtures/corrupt.wav -s schemas/wav.mbs
+```
+```
+STRUCTURAL ERROR
+
+WAV.chunks[1].data
+
+offset:     0x2c
+expected:   10004 bytes
+remaining:  4 bytes
+reason:     field length exceeds remaining input
+```
+
+文件正常时只会打印 `VALID <path> matches <Format>`。
+
+### Schema 速查手册
+
+四个各自独立、可以直接使用的 schema 文件，分别演示一种语法特性
+—— 每一个都和 `MoonBinSpec_test.mbt` 中真实测试用例解码的内容完
+全一致：
+
+```mbs
+// 嵌套结构：字段可以引用同一文档中的另一个 format。
+format Point endian big {
+  x : u8
+  y : u8
+}
+format Line endian big {
+  start : Point
+  stop  : Point
+}
+```
+
+```mbs
+// 定长数组，长度由前面的字段决定。
+format Sample endian big {
+  value : u8
+}
+format Container endian big {
+  count  : u8
+  values : Sample[count]
+}
+```
+
+```mbs
+// 读到文件末尾的数组：不断解码元素直到输入耗尽。
+format Chunk endian big {
+  tag : u8
+}
+format Stream endian big {
+  chunks : Chunk[*] until eof
+}
+```
+
+```mbs
+// 常量断言：如果字节内容不匹配就让解码失败。
+format Signature endian big {
+  magic : bytes[4] expect hex("89504E47")
+}
+```
+
 ## 浏览器 Inspector
 
 浏览器 Inspector 运行的是**完全相同**的 MoonBit 解码核心 —— 编译成
