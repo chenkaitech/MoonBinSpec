@@ -1,0 +1,66 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "moonbinspec/moonbinspec"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn decode(Schema, Bytes) -> Result[Array[Node], DecodeError]
+
+pub fn parse_schema(String) -> Result[Schema, String]
+
+pub fn render_tree(Schema, Array[Node]) -> String
+
+// Errors
+
+// Types and methods
+pub struct DecodeError {
+  path : String
+  offset : Int
+  expected : Int
+  remaining : Int
+  reason : String
+} derive(Eq, @debug.Debug)
+
+pub enum Endian {
+  Little
+  Big
+} derive(Eq, @debug.Debug)
+
+pub struct Field {
+  name : String
+  kind : FieldType
+} derive(Eq, @debug.Debug)
+
+pub enum FieldType {
+  U8
+  U16
+  U32
+  Bytes(Int)
+  Ascii(Int)
+  BytesFrom(String)
+  AsciiFrom(String)
+} derive(Eq, @debug.Debug)
+
+pub struct Node {
+  name : String
+  value : Value
+  offset : Int
+  length : Int
+} derive(Eq, @debug.Debug)
+
+pub struct Schema {
+  name : String
+  endian : Endian
+  fields : Array[Field]
+} derive(Eq, @debug.Debug)
+
+pub enum Value {
+  Unsigned(UInt64)
+  Hex(String)
+} derive(Eq, @debug.Debug)
+
+// Type aliases
+
+// Traits
